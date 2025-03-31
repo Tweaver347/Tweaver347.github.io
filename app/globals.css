@@ -1,0 +1,341 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Glass morphism styles */
+.glass {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+}
+
+/* Improve text readability on glass backgrounds */
+.glass-text {
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Ripple animation for buttons */
+@keyframes ripple {
+  0% {
+    opacity: 0.7;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.animate-ripple {
+  animation: ripple 0.6s linear;
+  opacity: 0;
+}
+
+/* Text size classes */
+.text-size-small {
+  font-size: 0.875rem;
+}
+
+.text-size-small h1 {
+  font-size: 1.5rem;
+}
+
+.text-size-small h2 {
+  font-size: 1.25rem;
+}
+
+.text-size-small h3 {
+  font-size: 1.125rem;
+}
+
+.text-size-small p,
+.text-size-small div {
+  font-size: 0.875rem;
+}
+
+.text-size-medium {
+  font-size: 1rem;
+}
+
+.text-size-medium h1 {
+  font-size: 2rem;
+}
+
+.text-size-medium h2 {
+  font-size: 1.5rem;
+}
+
+.text-size-medium h3 {
+  font-size: 1.25rem;
+}
+
+.text-size-medium p,
+.text-size-medium div {
+  font-size: 1rem;
+}
+
+.text-size-large {
+  font-size: 1.125rem;
+}
+
+.text-size-large h1 {
+  font-size: 2.5rem;
+}
+
+.text-size-large h2 {
+  font-size: 2rem;
+}
+
+.text-size-large h3 {
+  font-size: 1.5rem;
+}
+
+.text-size-large p,
+.text-size-large div {
+  font-size: 1.125rem;
+}
+
+.text-size-xl {
+  font-size: 1.25rem;
+}
+
+.text-size-xl h1 {
+  font-size: 3rem;
+}
+
+.text-size-xl h2 {
+  font-size: 2.5rem;
+}
+
+.text-size-xl h3 {
+  font-size: 2rem;
+}
+
+.text-size-xl p,
+.text-size-xl div {
+  font-size: 1.25rem;
+}
+
+/* High contrast mode */
+.high-contrast {
+  --background-color: #000000;
+  --text-color: #ffffff;
+  --link-color: #ffff00;
+  --border-color: #ffffff;
+  --heading-color: #ffffff;
+}
+
+.high-contrast h1,
+.high-contrast h2,
+.high-contrast h3,
+.high-contrast h4,
+.high-contrast h5,
+.high-contrast h6 {
+  color: var(--heading-color) !important;
+}
+
+.high-contrast p,
+.high-contrast span,
+.high-contrast div {
+  color: var(--text-color) !important;
+}
+
+.high-contrast a {
+  color: var(--link-color) !important;
+}
+
+.high-contrast .card,
+.high-contrast [class*="card"] {
+  background-color: #000000 !important;
+  border: 2px solid var(--border-color) !important;
+}
+
+.high-contrast button,
+.high-contrast [class*="button"] {
+  border: 2px solid var(--border-color) !important;
+}
+
+.high-contrast input,
+.high-contrast textarea,
+.high-contrast select {
+  background-color: #000000 !important;
+  color: var(--text-color) !important;
+  border: 2px solid var(--border-color) !important;
+}
+
+.high-contrast ::placeholder {
+  color: #cccccc !important;
+}
+
+.high-contrast .glass,
+.high-contrast .glass-card {
+  background: rgba(0, 0, 0, 0.9) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  border: 2px solid var(--border-color) !important;
+}
+
+/* Tour highlight effect */
+.tour-highlight {
+  position: relative;
+  z-index: 51;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.5), 0 0 0 8px rgba(59, 130, 246, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.high-contrast .tour-highlight {
+  box-shadow: 0 0 0 4px #ffff00, 0 0 0 8px rgba(255, 255, 0, 0.5);
+}
+
+/* Button styling */
+button[class*="button"],
+.button {
+  position: relative;
+  transition: all 0.2s ease;
+}
+
+/* Hover effect for buttons */
+button[class*="button"]:hover,
+.button:hover {
+  filter: brightness(1.1);
+}
+
+/* Active effect for buttons */
+button[class*="button"]:active,
+.button:active {
+  transform: translateY(1px);
+  filter: brightness(0.95);
+}
+
+/* Specific styling for icon buttons */
+button[class*="button"][class*="icon"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ensure icons are always visible */
+button[class*="button"] svg,
+.button svg {
+  opacity: 1;
+}
+
+/* High contrast mode button overrides */
+.high-contrast button[class*="button"],
+.high-contrast .button {
+  border: 2px solid var(--border-color) !important;
+}
+
+.high-contrast button[class*="button"]:hover,
+.high-contrast .button:hover {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.high-contrast button[class*="button"][aria-pressed="true"],
+.high-contrast button[class*="button"][data-state="open"],
+.high-contrast .button[aria-pressed="true"],
+.high-contrast .button[data-state="open"] {
+  background-color: var(--border-color) !important;
+  color: #000000 !important;
+}
+
